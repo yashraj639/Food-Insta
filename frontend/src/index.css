@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* src/styles/theme.css */
+:root {
+  --color-bg: #fdf8f3;      /* warm cream */
+  --color-text: #111111;    /* near black */
+  --color-card: #fefefe;    /* white cards */
+  --color-primary: #222222; /* dark gray for buttons */
+  --color-muted: #6b6b6b;   /* subtle text */
+  --color-border: #e5e5e5;  /* light border */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #111111;     /* deep charcoal */
+    --color-text: #f5f5f5;   /* soft beige-white */
+    --color-card: #1a1a1a;   /* dark card */
+    --color-primary: #fdf8f3;/* cream accent for CTA */
+    --color-muted: #a1a1a1;  /* muted gray */
+    --color-border: #333333; /* dark border */
+  }
+}
+
