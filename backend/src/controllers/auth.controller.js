@@ -48,7 +48,12 @@ async function signupUser(req, res) {
     { id: user._id, email: user.email },
     process.env.JWT_SECRET_KEY
   );
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
   return res.status(201).json({
     message: "User created",
     user: {
@@ -92,7 +97,12 @@ async function signinUser(req, res) {
     { id: user._id, email: user.email },
     process.env.JWT_SECRET_KEY
   );
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
   return res.status(201).json({
     message: "Signin successful",
     user: {
@@ -160,7 +170,12 @@ async function registerFoodPartner(req, res) {
     { id: foodPartner._id, email: foodPartner.email },
     process.env.JWT_SECRET_KEY
   );
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
   return res.status(201).json({
     message: "foodPartner created",
     foodPartner: {
@@ -204,7 +219,12 @@ async function signinFoodPartner(req, res) {
     { id: foodPartner._id, email: foodPartner.email },
     process.env.JWT_SECRET_KEY
   );
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
   return res.status(201).json({
     message: "foodPartner signin successfully",
     foodPartner: {
