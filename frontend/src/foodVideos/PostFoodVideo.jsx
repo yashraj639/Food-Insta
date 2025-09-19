@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL;
 
-
 const PostFoodVideo = () => {
   const navigate = useNavigate();
   const [video, setVideo] = useState(null);
@@ -31,13 +30,14 @@ const PostFoodVideo = () => {
 
     try {
       setLoading(true);
-      await axios.post(
-        `${BASE_URL}/api/food/post-food-video`,
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
+      await axios.post(`${BASE_URL}/api/food/post-food-video`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        withCredentials: true,
+      });
+
       navigate("/");
       toast.success("Video uploaded successfully!, Signin as a user to watch");
       setVideo(null);
