@@ -97,6 +97,7 @@ const WatchFoodVideo = () => {
               loop
               muted
               playsInline
+              controls 
               className="h-full w-full object-cover rounded-md"
             />
 
