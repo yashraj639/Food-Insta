@@ -8,7 +8,10 @@ const authRoutes = require("./routes/auth.routes");
 const foodRoutes = require("./routes/food.routes");
 const foodPartnerRoutes = require("./routes/foodPartner.routes");
 
-const allowedOrigins = ["https://food-insta.vercel.app"];
+const allowedOrigins = [
+  "https://food-insta.vercel.app",
+  "http://localhost:5173",
+];
 
 const corsOptions = {
   origin: function (origin, callback) {
