@@ -1,7 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Home, Heart, MessageCircle, Bookmark, LogOut, Play, Pause } from "lucide-react"; // Import Play/Pause icons
+import {
+  Home,
+  Heart,
+  MessageCircle,
+  Bookmark,
+  LogOut,
+  Play,
+  Pause,
+} from "lucide-react"; // Import Play/Pause icons
 
 const BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_BASE_URL;
 
@@ -29,7 +37,7 @@ const WatchFoodVideo = () => {
 
     // Toggle play/pause on click
     if (video.paused) {
-      video.play().catch(error => console.log("Play failed:", error));
+      video.play().catch((error) => console.log("Play failed:", error));
       setManuallyPaused(null); // Clear the manual pause state
     } else {
       video.pause();
@@ -45,11 +53,11 @@ const WatchFoodVideo = () => {
           const video = entry.target;
           // Find the index of the video being observed
           const index = videoRefs.current.indexOf(video);
-          
+
           if (entry.isIntersecting) {
             // Only play if this video wasn't manually paused by the user
             if (manuallyPaused !== index) {
-              video.play().catch(error => {
+              video.play().catch((error) => {
                 // This error is expected on some mobile browsers without a user gesture.
                 // We can ignore it or show a "tap to play" icon.
                 console.log("Autoplay prevented. User gesture required.");
@@ -134,8 +142,8 @@ const WatchFoodVideo = () => {
                 src={video.video}
                 loop
                 muted
+                autoPlay
                 playsInline
-                // REMOVED: controls 
                 className="h-full w-full object-cover rounded-md"
               />
 
@@ -187,12 +195,17 @@ const WatchFoodVideo = () => {
                 <button onClick={(e) => handleSave(video, idx, e)}>
                   <Bookmark
                     className={`w-8 h-8 transition ${
-                      video.isSaved ? "text-[var(--color-primary)]" : "text-white"
+                      video.isSaved
+                        ? "text-[var(--color-primary)]"
+                        : "text-white"
                     }`}
                     fill={video.isSaved ? "var(--color-primary)" : "none"}
                   />
                   <span className="text-white text-sm">
-                    {video.saveCount ?? video.savedCount ?? video.saveCount ?? 0}
+                    {video.saveCount ??
+                      video.savedCount ??
+                      video.saveCount ??
+                      0}
                   </span>
                 </button>
               </div>
