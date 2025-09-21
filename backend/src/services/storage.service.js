@@ -10,6 +10,7 @@ async function uploadFile(file, fileName) {
   const result = await imagekit.upload({
     file: file,
     fileName: fileName,
+    fileType: "video"
   });
 
   return result;
