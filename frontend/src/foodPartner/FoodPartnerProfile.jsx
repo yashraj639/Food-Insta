@@ -38,72 +38,25 @@ const FoodPartnerProfile = () => {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-[var(--color-card)] rounded-b-3xl shadow-lg p-6"
+        className="text-center p-7"
       >
-        <div className="flex flex-col md:flex-row md:items-center gap-5">
-          {/* Info */}
-          <div className="flex-1">
-            <motion.h1
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-2xl font-bold py-1"
-            >
-              {partner.businessName}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-sm py-1"
-            >
-              Owned by {partner.ownerName}
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-sm mt-1"
-            >
-              {partner.address}
-            </motion.p>
+        <h1 className="text-3xl font-bold mb-3">{partner.businessName}</h1>
+        <p className="text-gray-600 mb-2">{partner.ownerName}</p>
+        <p className="text-gray-500 text-sm">{partner.address}</p>
 
-            {/* Stats */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.2 },
-                },
-              }}
-              className="flex gap-6 mt-4"
-            >
-              <motion.div
-                variants={{
-                  hidden: { y: 20, opacity: 0 },
-                  visible: { y: 0, opacity: 1 },
-                }}
-              >
-                <p className="text-sm text-[var(--color-muted)]">Total Meals</p>
-                <p className="text-lg font-semibold">
-                  {partner.totalMeals || 0}
-                </p>
-              </motion.div>
-              <motion.div
-                variants={{
-                  hidden: { y: 20, opacity: 0 },
-                  visible: { y: 0, opacity: 1 },
-                }}
-              >
-                <p className="text-sm text-[var(--color-muted)]">Customers</p>
-                <p className="text-lg font-semibold">
-                  {partner.customersServed || 0}
-                </p>
-              </motion.div>
-            </motion.div>
+        {/* Stats */}
+        <div className="flex justify-center gap-8 mt-6">
+          <div>
+            <p className="text-lg font-semibold">{partner.totalMeals || 0}</p>
+            <p className="text-sm text-gray-600">Meals</p>
+          </div>
+          <div>
+            <p className="text-lg font-semibold">{partner.followers || "0"}</p>
+            <p className="text-sm text-gray-600">Followers</p>
+          </div>
+          <div>
+            <p className="text-lg font-semibold">{partner.following || "0"}</p>
+            <p className="text-sm text-gray-600">Following</p>
           </div>
         </div>
       </motion.div>
@@ -119,7 +72,7 @@ const FoodPartnerProfile = () => {
           hidden: {},
           visible: { transition: { staggerChildren: 0.1 } },
         }}
-        className="p-4 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4"
+        className="w-[80%] mx-auto p-4 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4"
       >
         {videos.length > 0 ? (
           videos.map((video, idx) => (

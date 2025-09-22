@@ -1,23 +1,27 @@
 @import "tailwindcss";
-
 /* src/styles/theme.css */
 :root {
-  --color-bg: #fdf8f3;      /* warm cream */
-  --color-text: #111111;    /* near black */
-  --color-card: #fefefe;    /* white cards */
-  --color-primary: #222222; /* dark gray for buttons */
-  --color-muted: #6b6b6b;   /* subtle text */
-  --color-border: #e5e5e5;  /* light border */
+  --color-bg: #ffffff;       /* white */
+  --color-text: #1c1c1c;     /* dark text */
+  --color-card: #ffffff;     /* clean card */
+  --color-primary: #ff4d4d;  /* juicy red for CTA */
+  --color-accent: #4caf50;   /* fresh green */
+  --color-secondary: #ff9800;/* warm orange */
+  --color-muted: #666666;    /* subtle text */
+  --color-border: #e5e5e5;   /* light border */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #111111;     /* deep charcoal */
+    --color-bg: #121212;     /* dark charcoal */
     --color-text: #f5f5f5;   /* soft beige-white */
-    --color-card: #1a1a1a;   /* dark card */
-    --color-primary: #fdf8f3;/* cream accent for CTA */
+    --color-card: #1e1e1e;   /* dark card */
+    --color-primary: #ff4d4d;/* juicy red CTA */
+    --color-accent: #4caf50; /* fresh green */
+    --color-secondary: #ff9800;/* warm orange */
     --color-muted: #a1a1a1;  /* muted gray */
     --color-border: #333333; /* dark border */
   }
 }
+
 
