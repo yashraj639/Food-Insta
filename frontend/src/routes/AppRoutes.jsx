@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserRegister from "../pages/UserRegister";
 import UserSignin from "../pages/UserSignin";
@@ -26,7 +25,7 @@ const AppRoutes = () => {
 
         <Route path="/post-food-video" element={<PostFoodVideo />} />
         <Route path="/watch-food-video" element={<WatchFoodVideo />} />
-        <Route path="/save-video" element={<SaveFoodVideo/>} />
+        <Route path="/save-video" element={<SaveFoodVideo />} />
       </Routes>
     </Router>
   );

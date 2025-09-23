@@ -1,7 +1,7 @@
 @import "tailwindcss";
 /* src/styles/theme.css */
 :root {
-  --color-bg: #ffffff;       /* white */
+  --color-bg: #fffdf7;       /* light cream */
   --color-text: #1c1c1c;     /* dark text */
   --color-card: #ffffff;     /* clean card */
   --color-primary: #ff4d4d;  /* juicy red for CTA */
