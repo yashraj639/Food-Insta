@@ -93,14 +93,6 @@ const FoodPartnerProfile = () => {
                 playsInline
                 className="w-full h-48 md:h-64 object-cover"
               />
-              {/* Hover overlay */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                className="absolute inset-0 bg-black/40 flex items-center justify-center transition"
-              >
-                <span className="text-white font-semibold">View Reel</span>
-              </motion.div>
             </motion.div>
           ))
         ) : (
